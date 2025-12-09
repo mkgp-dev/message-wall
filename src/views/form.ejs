@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a new message</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="w-full max-w-lg">
+            <div class="card bg-neutral rounded-md w-full">
+                <div class="card-body">
+                    <form method="POST" action="/new">
+                        <div class="space-y-2">
+                            <fieldset class="fieldset">
+                                <legend class="text-sm font-semibold">Name</legend>
+                                <input type="text" class="input outline-none w-full placeholder:text-slate-500" name="messageUser" placeholder="mkgp-dev" required />
+                            </fieldset>
+
+                            <fieldset class="fieldset">
+                                <legend class="text-sm font-semibold">Message</legend>
+                                <textarea class="textarea resize-none outline-none w-full placeholder:text-slate-500" name="messageText" rows="5" placeholder="Say something..." required></textarea>
+                            </fieldset>
+
+                            <div class="flex flex-row gap-2">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <a href="/" class="btn btn-error">Cancel</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

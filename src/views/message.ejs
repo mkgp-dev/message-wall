@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message from <%= message.user %></title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="w-full max-w-lg">
+            <div class="card bg-neutral rounded-md w-full">
+                <div class="card-body">
+                    <div class="space-y-2">
+                        <fieldset class="fieldset">
+                            <legend class="text-sm font-semibold text-slate-500">Name</legend>
+                            <p class="text-lg"><%= message.user %></p>
+                        </fieldset>
+
+                        <fieldset class="fieldset">
+                            <legend class="text-sm font-semibold text-slate-500">Message</legend>
+                            <p class="text-lg"><%= message.text %></p>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-between items-center mt-2">
+                <p class="text-slate-500 text-xs">id: <%= message.id %></p>
+
+                <a href="/" class="text-slate-500 text-xs flex flex-row gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                    </svg>
+                    Go back
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

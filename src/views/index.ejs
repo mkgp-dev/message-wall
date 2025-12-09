@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Wall</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <main class="max-w-5xl mx-auto py-8 space-y-6">
+        <header class="flex items-center justify-between">
+            <h1 class="text-2xl font-bold">Message<span class="text-primary">Wall</span></h1>
+
+            <a href="/new" rel="noopener noreferrer" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                Post a new message
+            </a>
+        </header>
+
+        <div class="columns-1 sm:columns-2 lg:columns-4 gap-4">
+            <% messages.map(item => { %>
+                <article class="mb-4 break-inside-avoid">
+                    <div class="card bg-neutral w-full shadow-lg rounded-md border border-slate-700 hover:border-primary">
+                        <div class="card-body">
+                            <p class="text-lg leading-tight"><%= item.text %></p>
+                            <div class="divider m-0 -mt-2"></div>
+                            <p><%= item.user %></p>
+                            <p class="text-neutral-500 -mt-3"><%= item.createdAt.toLocaleString() %></p>
+
+                            <div class="card-actions justify-end mt-2">
+                                <a href="/message/<%= item.id %>" class="flex flex-row gap-1 items-center text-xs">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                                    </svg>
+                                    View this message
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+            <% }) %>
+        </div>
+    </main>
+</body>
+</html>

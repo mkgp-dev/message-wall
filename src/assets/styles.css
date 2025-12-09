@@ -1,0 +1,14 @@
+@import "@fontsource-variable/roboto";
+@import "tailwindcss";
+@plugin "daisyui" {
+    themes: night --default;
+}
+
+@layer base {
+    @theme {
+        --font-sans: 'Roboto Variable', sans-serif;
+    }
+    html {
+        @apply antialiased scroll-smooth select-none;
+    }
+}
